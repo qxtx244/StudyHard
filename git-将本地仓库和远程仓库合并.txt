@@ -1,0 +1,5 @@
+将本地仓库和远程仓库合并起来以便将修改提交到github上的远程仓库
+
+1、创建本地仓库：来到本地仓库目录下，git init
+2、git pull xxxx.git master
+3、
