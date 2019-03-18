@@ -1,0 +1,8 @@
+编译打包的过程
+    1、通过aapt 打包资源文件生成R.java文件
+    2、处理AIDL文件，生成R.java文件
+    3、编译java文件，生成.class文件(javac)
+    4、把.class转化成DVM .dex文件
+    5、打包生成.apk文件
+    6.签名
+    7.对签名后的文件进行对齐处理
