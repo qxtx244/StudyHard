@@ -1,0 +1,2 @@
+netstat -ano |findstr xxxx	得到占用xxxx端口的pid
+taskkill /f /im xxxx		杀死此pid的进程
