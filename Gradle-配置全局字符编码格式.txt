@@ -1,0 +1,4 @@
+在build.gradle根节点中加入：
+	tasks.withType(JavaCompile) {
+		options.encoding = "utf-8"
+	}
