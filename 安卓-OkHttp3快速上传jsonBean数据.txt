@@ -1,0 +1,2 @@
+RequestBody对象使用其静态方法create()创建：
+	RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonMsg));  //jsonMsg为一个json格式字符串
