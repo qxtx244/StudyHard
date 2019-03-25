@@ -1,0 +1,24 @@
+在当前分支的末端创建分支：git branch bName
+
+HEAD指向某个分支：git checkout bName
+
+在当前分支的末端创建分支并将HEAD指向此分支：git checkout -b bName
+
+在指定的版本/tag/分支上创建新分支：git branch bName xxx
+
+删除分支：git branch -d bName
+
+合并分支时发生冲突，使用git commit 进行提交并结束冲突处理
+
+git reset 是重置到某个提交点（版本），这个提交点之后的版本将不保留
+
+git checkout 是检出某个分支，
+	使用git checkout -- filename将暂存区的修改返回工作区，但不清除暂存区
+	使用git reset --hard head可以清除暂存区,同时将版本库返回工作区？
+	
+
+git revert 直接创建一个和指定版本一致的版本，保留至今的所有版本记录
+
+增补一次提交，不会新增提交记录：git commit -C head -a --amend
+
+保存现场：git stash 恢复现场：git stash pop/apply 可以使当前修改对其它分支不可见，而直接提交再切换分支无法实现，并且可能产生脏提交
