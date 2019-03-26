@@ -1,3 +1,5 @@
+生成SSH key：ssh-kengen -t rsa -C "email" 生成的key文件放在user/.ssh
+
 在当前分支的末端创建分支：git branch bName
 
 HEAD指向某个分支：git checkout bName
@@ -22,3 +24,20 @@ git revert 直接创建一个和指定版本一致的版本，保留至今的所有版本记录
 增补一次提交，不会新增提交记录：git commit -C head -a --amend
 
 保存现场：git stash 恢复现场：git stash pop/apply 可以使当前修改对其它分支不可见，而直接提交再切换分支无法实现，并且可能产生脏提交
+
+获取远程库但不合并：git fetch xxx
+获取并合并：git pull
+
+
+给某个节点（默认为HEAD）给打上tag：git tag -a xxx -m <msg> <idFlag>	//-a：标签名	-m：注释
+查看tag注释：git show <tagname>
+标签删除：git tag -d <tagname>
+标签推送：git push origin <tagname>
+标签全部推送：git push origin --tags
+删除远程标签：先从本地删除，再使用git push origin :refs/tags/<tagname>
+
+显示最后一次提交信息：git last
+
+git的配置文件：.git/config
+
+为git命令设置别名：git config --global alias.<shortname> <command>
