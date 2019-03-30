@@ -1,0 +1,38 @@
+
+ActivityThread.java中存在main函数，为java的入口
+
+main()方法中：
+
+	1、获取Looper对象并就绪：Looper.prepareMainLooper()， 内部通过mylooper()得到了Looper对象;
+
+	2、开始轮询：Looper.loop();
+
+	在loop()中开始真正的轮询逻辑：
+		1）首先通过myLooper()得到Looper对象，再通过此得到MessageQueue队列对象（final），开始无限for循环；
+        for (;;) {
+		
+            2）从MessageQueue中取出消息：msg = queue.next()，如果为null则表示消息队列已经全部被处理，结束循环；
+		
+            3）对消息进行分发：msg.target.dispatchMessage(msg)。msg.target实际上就是提交此msg的Handler对象引用。dispatchMessage(msg)为消息分发逻辑：
+                ① 如果msg中包含callback：优先处理此callback：handleCallback(msg)，完成本次循环；
+                    》》使用场景：只要是向handler提交的是Runnable而不是Message，则将会使用Handler.obtain()生成一个Message，
+                        并将Runnable存到Message中（Message.callback = Runnable）；
+                备注：一般是postXxx()方法。message中包含runnable，说明msg的逻辑只在此runnable中，所以只需要处理runnable，就相当于处理msg了。
+		
+                ② msg中不存在callback：如果Handler中存在mCallback，则执行其内部唯一一个方法：mCallback.handleMessage(msg)，
+                    反之执行Handler的handleMessage(msg)方法。
+                        》》使用场景：只有在new Handler()时传入mCallback才会存在此逻辑。
+                    
+                    如果mCallback.handlerMessage(msg)返回了false：则不再执行Handler的handleMessage()方法，反之则执行。后者为空方法，需要自己实现。
+                  
+                备注：Handler的mCallback实际上是一个只有handleMessage(Messge)方法的final成员变量，只能在Handler被创建时传入，
+                        在使用中和Handler的handleMessage(msg)方法没什么区别，只是被区分了出来成为不同触发条件的handleMessage事件。
+                         分发顺序先于Handler中的handleMessage(Mesage)方法，其返回值决定是否继续执行后者。
+        }
+
+
+msg存入MessageQueue的流程：
+	任何Handler的消息提交方法最终都会来到sendMessgeAtTime(Message, uptimeMs)方法，
+		然后再调用Handler私有方法enqueueMessage(Message, long)将msg插入链表前面。
+
+	备注：其实这个所谓链表就是一个Message中嵌套着两个分别叫做next和prev的Message对象，成为一条Message对象链
