@@ -36,3 +36,17 @@ msg存入MessageQueue的流程：
 		然后再调用Handler私有方法enqueueMessage(Message, long)将msg插入链表前面。
 
 	备注：其实这个所谓链表就是一个Message中嵌套着两个分别叫做next和prev的Message对象，成为一条Message对象链
+
+一些细节：
+	1、在ActivityThread的main方法中，一个Looper被创建，这一定是本进程中第一个Looper，也是属于UI线程的Looper，并被一个final成员变量引用。
+
+	2、Looper的loop()方法不仅是无限循环，还会因为里面的queue.next()堵塞，堵塞的原因是queue中已经拿不到消息。
+	
+	3、mylooper()是在sThreadLocal中通过调用所在线程的对象作为key从一个ThreadLocalMap中拿到的（value），创建也一样，
+	    也就是说Looper.prepare()会和所在线程的对象组成键值对，存到sThreadLocalMap中。是一个线程只能有一次Looper.prepare()创建Looper，否则抛出异常；
+
+	4、UI线程将会通过<ActivityThread>.getHandler()拿到一个叫做H的Handler继承类，这个H中有ACT的生命周期tag，Binder就是通过它提交标记为这些tag的消息实现ACT生命周期方法的回调的；
+
+	5、Handler是一个协调者，负责提交消息和最后的执行消息，消息是交由Looper中的MessageQueue记录，消息执行的时机是Looper的loop()决定；
+
+	6、Handler对象可以指定Looper来创建，这意味着在子线程中使用这个Handler可以将消息提交到UI线程的MessageQueue，因此能进行UI线程的工作；
