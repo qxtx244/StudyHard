@@ -1,0 +1,11 @@
+
+annotations注解包依赖：com.android.support:support-annotations:24.2.0（存在sdk中）
+
+例：int类型
+
+@IntDef({Num.A, Num.B}) //限定为两个成员
+@Retention(RetentionPolicy.SOURCE) //注解存活的时间为source级别，不会被编译到class文件中
+public @interface Num {
+	A = 0;
+	B = 3;
+}
