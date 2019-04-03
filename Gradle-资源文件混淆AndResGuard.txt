@@ -1,0 +1,32 @@
+
+资源文件混淆：AndResGuard
+	1、添加Gradle插件依赖：
+	2、在【工程根目录】下的build.gradle中添加gradle的所需环境变量：classpath com.tencent.mm:AndResGuard-gradle-plugin:1.2.15
+	3、建议用一个新gradle文件来编写andResGuard实现
+	4、在项目build.gradle中应用此文件：apply from: '<name>.gradle'
+	
+	apply plugin: 'AndResGuard'
+
+	andResGuard {
+   	 	mappingFile = null	//是否保持资源原有的物理路径
+    		use7zip = false		//使用7zip压缩（要导入对应的7zip包）
+   	 	useSign = true		//是否支持签名
+   	 	keepRoot = false	//是否保持目录名
+
+		//打包时是否压缩这类文件
+   	 	compressFilePattern = [
+    	        	"*.png", "*.jpg", "*.jpeg", "*.gif", "resources.arsc"
+    		]
+
+		//白名单，只作用于文件名
+    		whiteList = [
+    		]
+
+		//压缩来源，可以同时使用artifact和path，path优先
+		sevenzip {
+			artifact = 'com.tencent.mm:SevenZip:1.2.15'
+			path = '<abstract path>'
+		}
+	}
+
+	5、使用gradle侧栏中新出现的andresguard命令选项。
