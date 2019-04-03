@@ -1,0 +1,2 @@
+
+壁纸可能会拷贝一份到User/AppData/Local/Microsoft/Windows/Theme，在删除壁纸文件后在这个路径或许可以找回这张图片
