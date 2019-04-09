@@ -1,0 +1,19 @@
+
+在ActivityThread中：
+	handleResumeActivity()方法执行了wm.addView(decor,1)，
+		即进入了WindowManagerGlobal中的addView()方法，
+			该方法内部创建了一个ViewRootImpl对象，并将decorView添加到WindowManager中，此时WindowManager通过ViewRootImpl和DecorView关联了起来；
+
+View层级：
+	继承FrameLayout的DecorView (布局文件：frameworks\base\core\res\res\layout\screen_custom_title.xml)
+	|
+	|__DecorView中的LinearLayout(vertical方向)
+	    |
+	    |__标题栏控件：FrameLayout R.id.title_container
+	    |
+	    |__ContentView：FrameLayout R.id.content （入口为setContentView()，直接入口为installDecor()$generateLayout()）
+
+备注：代码中找到这两个视图：View contentView = (ViewGroup)findViewById(R.android.id.content);
+
+
+		
