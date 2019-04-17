@@ -1,0 +1,2 @@
+
+cmd下使用adb批量安装apk：for %i in (*.apk) do adb install %i
