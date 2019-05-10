@@ -1,0 +1,19 @@
+
+使用 SpannableString 类进行修改：
+	SpannableString textSpan = new SpannableString();
+	textSpan.setSpan();
+	
+关键功能类：CharacterStyle接口
+
+实现类所在包：android.text.style
+	1、AbsoluteSizeSpan：绝对大小区间类，用绝对数值表示字符串大小
+	2、BackgroundColorSpan：背景颜色区间类，设置字符串的背景色
+	3、ClickableSpan：点击时间区间类，可设置字符串的点击事件
+	4、ForegroundColorSpan：前景颜色区间类，可设置字符串的前景色
+	5、RelativeSizeSpan：相对大小区间类，可设置相对于控件本身的字符串大小
+	6、MaskFilterSpan：特殊效果区间类，可设置浮雕，模糊类似的效果
+	7、ScaleXSpanSpan：缩放区间类，可设置字符串缩放
+	8、URLSpan：浏览器跳转区间类，可设置浏览器跳转
+
+
+	
