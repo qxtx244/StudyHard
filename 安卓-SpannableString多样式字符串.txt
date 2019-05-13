@@ -14,6 +14,7 @@
 	6、MaskFilterSpan：特殊效果区间类，可设置浮雕，模糊类似的效果
 	7、ScaleXSpanSpan：缩放区间类，可设置字符串缩放
 	8、URLSpan：浏览器跳转区间类，可设置浏览器跳转
+	9、ImageSpan：图片插入区间类，可设置图文混排
 
 
 	
