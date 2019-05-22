@@ -1,0 +1,5 @@
+从Google官方服务器下载：
+
+Windows版：https://dl.google.com/android/repository/platform-tools-latest-windows.zip
+Linux版：https://dl.google.com/android/repository/platform-tools-latest-linux.zip
+Mac版：https://dl.google.com/android/repository/platform-tools-latest-darwin.zip
