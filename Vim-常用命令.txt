@@ -1,5 +1,3 @@
-配置vim：编辑~/.vimrc
-vim总是显示行号：在.vimrc中输入set number
 
 命令模式：
 	撤销：			u
@@ -16,7 +14,4 @@ vim总是显示行号：在.vimrc中输入set number
 					动作
 						f（find）
 						i （符号对内的块）
-	
-					动作
-						f（find）
-						i （符号对内的块）
+
