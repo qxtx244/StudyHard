@@ -1,0 +1,6 @@
+root下命令行：setenforce查看级别，setenforce n 设置级别n：
+	[0]permissive，允许动作但会收到警告，且会记录到日志
+	[1]enforcing，selinux所设置的安全策略都会被启用
+	disabled在命令行下不起作用个，只能修改配置文件
+重启生效
+	

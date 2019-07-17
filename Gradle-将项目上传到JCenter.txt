@@ -1,4 +1,4 @@
-
+﻿
 》》将模块发布到jcencter：
 
 1、工程build.gradle中添加依赖：classpath 'com.novoda:bintray-release:0.9'，
