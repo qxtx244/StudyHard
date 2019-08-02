@@ -1,0 +1,16 @@
+
+登录shell终端：adb shell
+1、寻找应用包名：pm list packages | grep <packageName>
+1、找到安装包备份位置：pm path <packageName>
+2、使用adb pull将apk拷出来
+
+备注：筛选安装列表：adb list packages + 
+1、只列出系统包：-s
+2、只列出三方包：-3
+3、只列出启用的包：-e
+4、只列出禁用的包：-d
+5、输出包相关联的文件路径：-f
+6、输出包和安装信息：-i
+7、输出包和未安装信息：-u
+8、根据用户id查询此用户空间的所有包：-user <userId>
+9、筛选：-e <filter string>
