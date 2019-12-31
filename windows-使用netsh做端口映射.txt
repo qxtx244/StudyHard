@@ -1,0 +1,8 @@
+
+执行：netsh 
+interface portproxy add v4tov4  listenaddress=192.168.5.3 listenport=445 connectaddress=192.168.5.3  connectport=8765
+
+取消：netsh 
+interface  portproxy delete v4tov4 listenaddress=192.168.1.8  listenport=445
+
+查看当前已转发的：netsh interface  portproxy show  v4tov4
