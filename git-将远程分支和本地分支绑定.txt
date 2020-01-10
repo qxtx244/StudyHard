@@ -1,0 +1,3 @@
+
+》》将远程分支remoteBranch和本地分支localBranch绑定：
+	git branch --set-upstream-to=origin/<remoteBranch> <localBranch>
