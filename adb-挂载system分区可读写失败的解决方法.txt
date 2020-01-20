@@ -1,0 +1,7 @@
+
+可能开启了verity权限，关闭就好了
+
+adb root
+adb disable-verity
+adb reboot
+adb remount

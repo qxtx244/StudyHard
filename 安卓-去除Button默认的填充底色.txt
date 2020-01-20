@@ -1,0 +1,3 @@
+
+为Button控件加上style：
+ style="?android:attr/borderlessButtonStyle"（无边界的button样式）

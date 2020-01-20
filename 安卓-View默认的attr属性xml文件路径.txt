@@ -1,0 +1,2 @@
+
+在/sdk/platforms/android-xx/data/res/values/attrs.xml，即可看到安卓View默认的xml属性设置

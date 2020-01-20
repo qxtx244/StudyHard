@@ -1,0 +1,5 @@
+1、Shift + Enter：标题文本换行
+2、Ctrl + Enter：标题换页
+3、Ctrl + +/=：转换成下标文本，加Shift为上标
+4、Ctrl + E/R/L：文本居中/右/左对齐
+5、Ctrl + B：加粗

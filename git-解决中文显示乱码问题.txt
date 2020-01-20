@@ -1,0 +1,6 @@
+
+1、形如274\232\350\256\256\346.txt乱码解决：
+	git config --global quotepath false
+	
+或者
+2、git config --global gui.encoding utf-8

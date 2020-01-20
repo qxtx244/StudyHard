@@ -1,0 +1,11 @@
+
+1、为应用添加相关权限：
+	<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+2、在setContentView()之前为对应Activity设置特殊的flag：
+	getWindow().addFlags(
+                    WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
+                            | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
+                            | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
+					
+最终效果是，当此Activity被启动，点亮屏幕，并无条件显示在任何锁屏界面之上（不加FLAG_TURN_SCREEN_ON好像也一样会点亮屏幕）

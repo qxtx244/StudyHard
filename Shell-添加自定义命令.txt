@@ -1,0 +1,6 @@
+
+修改文件：/etc/bashrc
+
+加入 alias xxx='XXX' //xxx为命令名称，XXX为可识别命令
+
+保存退出后使配置生效：执行 source /etc/bashrc

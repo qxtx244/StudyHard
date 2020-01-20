@@ -1,0 +1,70 @@
+
+git checkout --patch <branch> <file>
+	后续确认命令：
+	y - 存储这个hunk 
+	n - 不存储这个hunk 
+	q - 离开，不存储这个hunk和其他hunk 
+	a - 存储这个hunk和这个文件后面的hunk 
+	d - 不存储这个hunk和这个文件后面的hunk 
+	g - 选择一个hunk 
+	/ - 通过正则查找hunk 
+	j - 不确定是否存储这个hunk，看下一个不确定的hunk 
+	J - 不确定是否存储这个hunk，看下一个hunk 
+	k - 不确定是否存储这个hunk，看上一个不确定的hunk 
+	K -不确定是否存储这个hunk，看上一个hunk 
+	s - 把当前的hunk分成更小的hunks 
+	e - 手动编辑当前的hunk 
+	? - 输出帮助信息
+
+
+git show <tag>/<版本>：查看某个tag/版本详细信息
+
+git tag -a <版本号> -m <注释>：为某个版本添加带注释的tag
+
+git tag -l -n：查看tag信息
+
+生成SSH key：ssh-kengen -t rsa -C "email" 生成的key文件放在user/.ssh
+
+在当前分支的末端创建分支：git branch bName
+
+HEAD指向某个分支：git checkout bName
+
+在当前分支的末端创建分支并将HEAD指向此分支：git checkout -b bName
+
+在指定的版本/tag/分支上创建新分支：git branch bName xxx
+
+删除分支：git branch -d bName
+
+合并分支时发生冲突，使用git commit 进行提交并结束冲突处理
+
+git reset 是重置到某个提交点（版本），这个提交点之后的版本将不保留
+
+git checkout 是检出某个分支，
+	使用git checkout -- filename将暂存区的修改返回工作区，但不清除暂存区
+	使用git reset --hard head可以清除暂存区,同时将版本库返回工作区？
+	
+
+git revert 直接创建一个和指定版本一致的版本，保留至今的所有版本记录
+
+增补一次提交，不会新增提交记录：git commit -C head -a --amend
+
+保存现场：git stash 恢复现场：git stash pop/apply 可以使当前修改对其它分支不可见，而直接提交再切换分支无法实现，并且可能产生脏提交
+
+获取远程库但不合并：git fetch xxx
+获取并合并：git pull
+
+
+给某个节点（默认为HEAD）给打上tag：git tag -a xxx -m <msg> <idFlag>	//-a：标签名	-m：注释
+查看tag注释：git show <tagname>
+标签删除：git tag -d <tagname>
+标签推送：git push origin <tagname>
+标签全部推送：git push origin --tags
+删除远程标签：先从本地删除，再使用git push origin :refs/tags/<tagname>
+
+显示最后一次提交信息：git last
+
+git的配置文件：.git/config
+
+为git命令设置别名：git config --global alias.<shortname> <command>
+
+关联分支：git -ser-upstream-to 

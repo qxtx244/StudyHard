@@ -1,0 +1,4 @@
+
+1、编辑/etc/ssh/sshd_config，将ClinetAliveInterval设置成某个值（单位为秒），让服务器周期地向客户端发一个消息用于保持连接。
+
+2、执行service sshd reload让其生效

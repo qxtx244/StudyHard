@@ -1,0 +1,13 @@
+
+Messenger是基于AIDL的IPC实现，它可以方便地进行双向通信。
+
+服务端：
+	1、创建Messenger对象用来接收客户端的消息；
+	2、使用<Message>.replyTo.send(Message)向客户端发送消息。
+
+客户端：
+	1、静态/动态注册一个Service
+	2、绑定服务：bingService(<Intent>, <ServiceConnection>, <int>)，intent需要指定packageName和action
+	3、创建Messenger对象用来接收服务端消息；
+	4、创建ServiceConnection对象，在成功连接后通过IBinder得到一个Messenger对象server（就是服务端的）;
+	5、使用server.send(Mesage)向服务端发送数据。

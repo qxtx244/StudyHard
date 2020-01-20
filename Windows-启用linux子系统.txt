@@ -1,0 +1,6 @@
+
+1、在设置-更新和安全-开发者选项 中切换到开发人员模式；
+2、在功能和程序中 勾选linux子系统，等待配置完成；
+3、在应用商店下载ubuntu18.04LTS安装；
+4、如果以上操作重启后仍然不行，用管理员权限打开window powershell，
+	输入Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux，这将会直接重启。

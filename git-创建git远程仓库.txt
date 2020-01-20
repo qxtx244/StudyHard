@@ -1,0 +1,11 @@
+
+1、在某个用户家目录下创建git裸仓库：git init --bare <repo name>.git
+
+2、确保这个目录的所有者和用户组都为当前用户
+
+3、不允许此用户使用登陆shell：修改/etc/passwd文件，搜索"<userName>:x:"关键字，
+    将后面的路径改为/home/<gitUser>:/usr/bin/git-shell
+
+4、免账户密码拉取远程仓库：将公钥放到/homt/<gitUser>/.ssh/authorized_keys文件里，每行一个
+
+5、克隆：git clone git@<serverAddr>:<path>

@@ -1,0 +1,4 @@
+
+%UERPROFILE%/Desktop
+
+%USERPROFILE%表示当前windows用户目录 在环境变量中被定义，等效于c:\User\XXXX\

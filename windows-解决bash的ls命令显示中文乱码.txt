@@ -1,0 +1,2 @@
+
+在bash下使用 ls --show-control-chars 来强制使用控制台字符编码来显示文件名

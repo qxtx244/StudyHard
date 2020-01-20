@@ -1,0 +1,45 @@
+
+为未勾选c++支持的工程：
+
+	1、在需要的类中加入 System.loadLibrary(<libname>); //不需要加后缀和so前缀
+	2、在控制台编译出h文件 javah <ClassFilePath>
+	3、复制到src/main/cpp目录下
+	4、编写CMakeLists.txt文件:
+		# 设置CMake的最低版本构建本机所需库
+		cmake_minimum_required(VERSION 3.4.1)
+
+		# 你可以定义多个library库，并使用CMake来构建。Gradle会自动将包共享库关联到你的apk程序。
+		#库名称	#设置为共享库 #原文件相对路径
+		file(GLOB srcArray src/main/cpp/*.c)
+		add_library(
+             		ndktest
+             		SHARED
+             		${srcArray} )
+
+		# 搜索指定预先构建的库和存储路径变量。因为CMake包括系统库搜索路径中默认情况下,只需要指定想添加公共NDK库的名称，在CMake验证库之前存在完成构建
+		#目标库	在CMake定位前指定的NDK库名称
+		find_library(
+			ndktest
+			log )
+
+		#指定库CMake应该链接到目标库中，可以链接多个库，比如定义库，构建脚本，预先构建的第三方库或者系统库
+		#指定目标库 #目标库到日志库的链接，包含在NDK
+		target_link_libraries(
+                       		ndktest
+                       		${ndktest} )
+
+	5、在build.gradle中的android节点下：
+		defaultConfig节点下添加:
+
+			ndk { abiFilter 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86'}
+
+		根节点下：
+
+			externalNativeBuild { cmake { path 'CMakeLists.txt'} }
+
+		
+
+	5、在cpp下新建c源文件，进行代码编写
+		JNIEXPORT type JNICALL Java_package_name(JNIEnv *env, type val) { return (*env)->NewXXXX(); }
+
+	6、编译后将在build》intermediates》cmake》obj目录下

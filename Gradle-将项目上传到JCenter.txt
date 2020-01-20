@@ -1,0 +1,23 @@
+﻿
+》》将模块发布到jcencter：
+
+1、工程build.gradle中添加依赖：classpath 'com.novoda:bintray-release:0.9'，
+	并在module中添加插件支持：applymodule中添加插件支持：apply plugin: 'com.novoda.bintray-release'；
+
+2、添加publish节点
+	publish {
+		userOrg = '<userName>'    			//bintray.com用户名
+		groupId = '<jcenterPath>'   		//jcenter上的路径
+		artifactId = '<uri>'    			//自己的maven上添加的包名，可包含大写
+		publishVersion = '<versionName>'    //版本号
+		desc = '<description>'    			//描述
+		website = '<website>'    			//网站，不重要
+	}
+	
+3、终端中输入命令：gradlew clean build bintrayUpload -PbintrayUser=<userName> -PbintrayKey=<ApiKey> -PdryRun=false；
+
+4、如果步骤3失败了则重试，直到提示SUCCESSFULLY；
+
+5、到bintray中点击Add to JCenter按钮，等待审核通过。
+
+备注，依赖为：implemen '<jcenterPath>:<uri>:<versionName>'

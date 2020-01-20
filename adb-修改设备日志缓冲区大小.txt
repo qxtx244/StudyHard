@@ -1,0 +1,4 @@
+
+查看设备的日志缓冲区大小：adb logcat -g
+
+修改设备日志缓冲区大小为16M：adb logcat -G 16M

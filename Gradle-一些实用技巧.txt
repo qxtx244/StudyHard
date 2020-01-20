@@ -1,0 +1,4 @@
+
+1、使用buildConfigField对多渠道打包apk进行配置不同的值：
+	build.gradle中：在buildType节点的某个版本下，使用buildConfigField(<type>, <key>, <value>)进行配置，可配置多个；
+	java代码中：使用BuildConfig.<key>可得到对应的值。

@@ -1,0 +1,6 @@
+
+更改logcat缓冲区大小可以使得Android Studio的Logcat打印更多的日志
+
+1、通过adb命令：adb logcat -G 5m 设置缓冲区大小为5MB
+
+2、设备操作：进入设备开发者选项，根据需要调整日志缓冲区大小

@@ -1,0 +1,9 @@
+
+》》win + R 输入regedit打开注册表
+
+》》注册表找到
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AdvancedHKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+
+》》新建一个DWORD 32位值，名称为ShowSecondsInSystemClock，内容改为十六进制的1；
+
+》》重启资源管理器

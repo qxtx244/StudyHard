@@ -1,0 +1,8 @@
+
+菜单栏：Tools -> Generate Doc
+
+在Locale栏输入:   zh_CN 
+
+在下一行传入参数: -encoding utf-8 -charset utf-8
+
+换行：在行尾加入</br>
