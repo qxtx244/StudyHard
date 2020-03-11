@@ -1,4 +1,8 @@
 
+
+
+强制允许合并不相关的分支历史：在命令后面加 --allow-unrelated-histories
+
 git checkout --patch <branch> <file>
 	后续确认命令：
 	y - 存储这个hunk 
