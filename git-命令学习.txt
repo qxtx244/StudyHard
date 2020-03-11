@@ -1,5 +1,7 @@
 
+删除暂存区的提交：git rm --cache <fileName>
 
+将暂存区清空：rm .git/index
 
 强制允许合并不相关的分支历史：在命令后面加 --allow-unrelated-histories
 
