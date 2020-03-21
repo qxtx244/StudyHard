@@ -1,0 +1,8 @@
+
+
+findstr /s /i <string> <file_name>
+
+/s 包括子目录
+/i 不区分大小写
+<string> 待搜索字符串
+<file_name> 文件名，可通配

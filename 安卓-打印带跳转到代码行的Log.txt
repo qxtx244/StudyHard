@@ -1,0 +1,7 @@
+Logcat中只要使用 <java文件名>:<代码行数>，在Logcat中就可以变成可以点击调转到对应代码行的超链接
+例：
+	//调用栈，数组按栈中顺序来存储，即从栈顶开始
+	StackTraceElement[] ste = Thread.currentThread().getStackTrace();
+	//通过字符串匹配等合适方式筛选需要打印出来的信息，前两个是栈自己的方法调用，因此第3个开始才是自己的方法
+	String log = ste[3].getClassName() + "$" + ste.getMethodName() + "(" + ste.getFileName() + ":" + ste.getLineNumber() + ")";
+	Log.e(<tag>, log + "\n" + msg);

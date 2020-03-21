@@ -1,0 +1,6 @@
+
+在安卓8.0后，后台service的启动被限制。
+
+1、必须调用startForegroundService()，并且在之后一定时间内service调用startForeground()。
+
+2、并且，startForeground(int id)的id不能为0。【方法的注释里明确说了"must not be 0."】

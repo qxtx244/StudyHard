@@ -1,0 +1,7 @@
+
+在需要build的module的build.gradle下添加：
+android {
+	lintOptions {
+          abortOnError false
+    }
+}

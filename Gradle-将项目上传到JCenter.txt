@@ -1,4 +1,4 @@
-﻿
+
 》》将模块发布到jcencter：
 
 1、工程build.gradle中添加依赖：classpath 'com.novoda:bintray-release:0.9'，
@@ -20,4 +20,4 @@
 
 5、到bintray中点击Add to JCenter按钮，等待审核通过。
 
-备注，依赖为：implementation '<jcenterPath>:<uri>:<versionName>'
+备注，依赖为：implement '<jcenterPath>:<uri>:<versionName>'

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 拉取远程分支remoteB并创建对应的新分支localB：
 git fetch origin remoteB
@@ -9,11 +10,9 @@ git branch --delete(-D) origin/remoteB
 删除服务器上的分支remoteB
 git push origin -d remoteB
 
-重新关联远程分支remoteB到localB：
-git branch --set-up-stream-to=origin/remoteB localB
+重新关联远程分支remoteB到localB：git branch --set-up-stream-to=origin/remoteB localB
 
-在指定的版本/tag/分支上创建新分支locaB：
-git branch localB xxx
+在指定的版本/tag/分支上创建新分支locaB：git branch localB xxx
 
 git reset 是重置到某个提交点（版本），这个提交点之后的版本将不保留
 
@@ -23,37 +22,63 @@ git checkout 是检出某个分支，
 	
 git revert 直接创建一个和指定版本一致的版本，保留至今的所有版本记录
 
-增补一次提交，不会新增提交记录（但git reflog里仍然会有）：
-git commit -C head -a --amend
+增补一次提交，不会新增提交记录（但git reflog里仍然会有）：git commit -C head -a --amend
 
-保存现场：
-git stash save xxx
+保存现场：git stash save xxx
 恢复现场：git stash pop/apply 
 可以使当前修改对其它分支不可见，而直接提交再切换分支无法实现，并且可能产生脏提交
 
-获取远程库但不合并：
-git fetch xxx
-获取并合并：
-git pull
+获取并合并：git pull
 
 给某个节点（默认为HEAD）给打上tag：
 git tag -a xxx -m <msg> <idFlag>	//-a：标签名	-m：注释
 
-查看tag注释：
-git show <tagname>
+查看tag注释：git show <tagname>
 
-标签删除：
-git tag -d <tagname>
+标签删除：git tag -d <tagname>
 
-标签推送：
-git push origin <tagname>
+标签推送：git push origin <tagname>
 
-标签全部推送：
-git push origin --tags
+标签全部推送：git push origin --tags
 
 删除远程标签：先从本地删除，再使用git push origin :refs/tags/<tagname>
 
 git的配置文件：.git/config
 
-为git命令设置别名：
-git config --global alias.<shortname> <command>
+为git命令设置别名：git config --global alias.<shortname> <command>
+
+删除暂存区的提交：git rm --cache <fileName>
+
+将暂存区清空：rm .git/index
+
+强制允许合并不相关的分支历史：在命令后面加 --allow-unrelated-histories
+
+git checkout --patch <branch> <file>
+	后续确认命令：
+	y - 存储这个hunk 
+	n - 不存储这个hunk 
+	q - 离开，不存储这个hunk和其他hunk 
+	a - 存储这个hunk和这个文件后面的hunk 
+	d - 不存储这个hunk和这个文件后面的hunk 
+	g - 选择一个hunk 
+	/ - 通过正则查找hunk 
+	j - 不确定是否存储这个hunk，看下一个不确定的hunk 
+	J - 不确定是否存储这个hunk，看下一个hunk 
+	k - 不确定是否存储这个hunk，看上一个不确定的hunk 
+	K -不确定是否存储这个hunk，看上一个hunk 
+	s - 把当前的hunk分成更小的hunks 
+	e - 手动编辑当前的hunk 
+	? - 输出帮助信息
+
+
+查看某个tag/版本详细信息：git show <tag>/<版本>
+
+为某个版本添加带注释的tag：git tag -a <版本号> -m <注释>
+
+查看tag信息：git tag -l -n
+
+生成SSH key：ssh-kengen -t rsa -C "email" 生成的key文件放在user/.ssh
+
+显示最后一次提交信息：git last
+
+git的配置文件：.git/config
