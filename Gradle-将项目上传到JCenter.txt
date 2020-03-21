@@ -20,4 +20,4 @@
 
 5、到bintray中点击Add to JCenter按钮，等待审核通过。
 
-备注，依赖为：implemen '<jcenterPath>:<uri>:<versionName>'
+备注，依赖为：implementation '<jcenterPath>:<uri>:<versionName>'
