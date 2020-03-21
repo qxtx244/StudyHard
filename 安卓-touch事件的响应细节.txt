@@ -1,0 +1,5 @@
+
+
+》》motionEvent.getPointerCount()的返回值
+	在控件接收到DOWN事件之前，MotionEvent中就已经更新了触摸点数量
+	在控件接收到UP事件之后，MotionEvent才更新触摸点数量
