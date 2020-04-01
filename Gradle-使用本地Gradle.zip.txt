@@ -1,0 +1,2 @@
+
+在工程的gradle-wrapper-gradle-wrapper.properities里：disttributionUrl=file:///你下载的gradle-x.x.x-all.zip压缩包的绝对路径
