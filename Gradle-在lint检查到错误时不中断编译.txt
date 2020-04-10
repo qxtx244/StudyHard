@@ -1,0 +1,8 @@
+
+在android的闭包中添加
+
+lintOptions {
+	abortOnError false
+}
+
+lint检查是为了优化代码，但发现错误并不一定会导致程序异常
