@@ -1,0 +1,12 @@
+
+
+1、启动监听线程：gradlew :<MODULE_NAME>:<TASK_NAME> -Dorg.gradle.debug=true
+
+2、添加一个配置：Run>Edit Configurations，左上角“+”添加一个“Gradle”配置，命名（如DebugGradle），[Debugger mode]选“Attach to remote JVM”，其它的默认即可。
+
+3、给gradle代码下断点
+
+4、开始debug上一步的DebugGradle
+
+5、执行这个task
+
