@@ -1,0 +1,46 @@
+
+下载安卓源码版本清单：（清华大学镜像源）
+  git clone https://aosp.tuna.tsinghua.edu.cn/platform/manifest.git
+
+切换到想要的版本（tag）
+  git checkout <tag>，获得新的manifest/default.xml
+  
+源码的全部git路径全在manifest/default.xml中，里面全部的project节点即为uri。
+  绝对路径：https://apsp.tuna.tsinghua.edu.cn/<path节点>/<name节点>.git
+  再使用git cloneg <path> 拉取
+  
+备注：如果path节点指定的目录不存在，则建立
+
+
+现成的python脚本
+
+import xml.dom.minidom  
+import os  
+from subprocess import call  
+ 
+#存放即将下载的文件的绝对路径
+rootdir = "存放文件的绝对路径"  
+ 
+#如果配置了环境变量，则不需要绝对路径，直接使用git命令就可以
+git = "git程序绝对路径\\git.exe"
+dom = xml.dom.minidom.parse("前面拉取到的manifest\default.xml的绝对路径")  
+root = dom.documentElement  
+ 
+prefix = git + " clone https://aosp.tuna.tsinghua.edu.cn/"  
+suffix = ".git"  
+ 
+if not os.path.exists(rootdir):  
+    os.mkdir(rootdir)  
+	
+#如果路径树不完整，则建目录树，再去下载
+for node in root.getElementsByTagName("project"):  
+    os.chdir(rootdir)  
+    d = node.getAttribute("path")  
+    last = d.rfind("/")  
+    if last != -1:  
+        d = rootdir + "/" + d[:last]  
+        if not os.path.exists(d):  
+            os.makedirs(d)  
+        os.chdir(d)  
+    cmd = prefix + node.getAttribute("name") + suffix  
+    call(cmd)
