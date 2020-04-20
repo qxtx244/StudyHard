@@ -1,0 +1,11 @@
+
+
+调用以下方法实现资源文件分目录存放，方便查找，善待强迫症
+
+android {
+	sourceSets {
+		main {
+			res.srcDirs = [, , ]
+		}
+	}
+}
