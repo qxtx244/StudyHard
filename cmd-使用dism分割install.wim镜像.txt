@@ -1,0 +1,7 @@
+Dism /Split-Image/ImageFile:C:\install.wim /SWMFile:C:\install.swm /FileaSize:4096
+
+其中：
+Dism Dism命令在win10中可用
+C:\install.wim 是要分割的wim映像文件的路径。
+C:\install.swm 是生成的swm 文件的路径，每个文件会以install.swm，install2.swm...顺序命名。
+4096 是要创建的每个 .wim 拆分文件的最大大小（以 MB 为单位）。
