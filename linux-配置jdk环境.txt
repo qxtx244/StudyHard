@@ -1,0 +1,22 @@
+1、使用apt get方式
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt get update
+sudo apt install openjdk-8-jdk
+
+查看是否安装成功以及安装的版本：java -version
+
+2、手动安装
+
+》》直接去oracle官网下载，或者wget下载：wget http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz
+
+》》解压到某个位置：tar -zxvf jdk-8u111-linux-x64.tar.gz
+
+ 》》配置环境变量：
+	（全局）/etc/profile
+	export JAVA_HOME=/usr/lib/jdk/jdk1.8
+	export JRE_HOME=${JAVA_HOME}/jre
+　　　　   export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+　　　　   export PATH=.:${JAVA_HOME}/bin:$PATH
+	（当前用户）~/.bashrc
+	设置内容同上
+	
