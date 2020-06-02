@@ -1,0 +1,7 @@
+打开设置：ctrl+alt+s
+打开设置：File > Settings
+设置窗口中搜索关键字：Updates 或 Use secure connection
+
+》》打开File > Settings > Appearance & Behavior > System Settings > Updates
+
+》》去掉Use secure connection选项的勾选
