@@ -1,0 +1,17 @@
+ValueAnimator.setDuration(durationMs)并不一定是实际时长，它有一个私有静态成员变量sDurationScale，等于设备开发者选项中的Animator缩放时长。
+
+因此，ValueAnimator的实际持续时长=durationMs * sDurationScale
+
+解决方案：
+
+》》1.使用反射，将sDurationScale修改为1.0f（像安卓10以上，反射可能会失败，则此方法无效）
+    ValueAnimator animator;
+    try {
+            Field field = ValueAnimator.class.getDeclaredField("sDurationScale");
+            field.setAccessible(true);
+            field.set(animator, 1.0f);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+》》2.继承Animator类，自己实现动画
