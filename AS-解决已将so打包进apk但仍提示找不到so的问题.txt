@@ -1,0 +1,24 @@
+
+先确定配置：
+
+》》so文件放在module/libs中
+	sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+》》so文件放在module/src/main/jniLibs中
+
+可能原因：
+
+》》添加了32位的so，但目标设备支持64位，当运行时，设备可能只寻找64位so，因此提示找不到对应so。
+解决方案：在配置中添加
+android {
+	defualtConfig {
+		...
+		 ndk {
+			abifilters 你添加的so类型（"armeabi","armeabi-v7a","x86","arm64-v8a"等等）
+		 }
+	}
+}
