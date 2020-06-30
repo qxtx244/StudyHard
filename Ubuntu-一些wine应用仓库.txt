@@ -1,0 +1,12 @@
+
+Ubuntu安装wine应用
+
+先配置deepin-for-ubuntu依赖：
+》》git clone git@gitee.com/qxtx269/deepin-wine-for-ubuntu.git
+    或git clone git@github.com/qxtx244/deepin-wine-for-ubuntu.git
+
+》》然后使用sudo执行目录下的install.sh
+
+wine应用获取：https://mirrors.aliyun.com/deepin/pool/non-free/d/
+
+下载完成后，安装deb文件：sudo dpkg -i xxxx.deb
