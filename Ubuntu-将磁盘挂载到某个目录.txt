@@ -1,0 +1,10 @@
+
+查看当前用户id命令：id
+查看磁盘信息：blkid
+
+在/etc/fstab中添加：
+
+#Entry "Xxxx" for /dev/xxxx :
+UUID="目标磁盘的UUID"   你要挂载的目标路径    ntfs-3g defaults,locale=zh_CN.UTF-8,gid=用户的gid,uid=用户的uid,umask=权限 0   0
+
+
