@@ -1,0 +1,4 @@
+
+sudo apt install openjdk-8-jdk
+
+在usr/lib中可以找到jdk目录
