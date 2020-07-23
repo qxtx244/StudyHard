@@ -1,0 +1,22 @@
+
+原因：android9.0以上对httpclient这个做了限制
+
+解决方案：
+
+》》1.xml目录中建一个文件，内容如下
+	<?xml version="1.0" encoding="utf-8"?>
+		<network-security-config>
+			<base-config cleartextTrafficPermitted="true" />
+		</network-security-config>
+
+》》2.在AndroidManifest.xml
+	<application android:networkSecurityConfig="@xml/network_security_config">
+		<uses-library android:name="org.apache.http.legacy" android:required="false" />
+	</application>
+
+》》3.在android闭包里添加内容
+	android {
+		useLibrary 'org.apache.http.legacy'
+	}
+	
+彻底解决：不要使用httpClient，而是使用HttpUrlConnection。或者直接使用https
