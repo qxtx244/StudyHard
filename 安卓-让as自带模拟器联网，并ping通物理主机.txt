@@ -1,0 +1,8 @@
+
+》》通过getprop找到[net.eth0.dns1]或者[net.dns1]字样，后面应该带有10.0.2.3这种ip；（getprop | grep \\[net.）(getprop | grep dns)等可以快速查找
+
+》》通过adb shell进入终端，执行su，变成超级管理员
+
+》》比如找到[net.dns1]字样，输入setprop net.dns1 192.168.x.y（跟物理主机同一网段，不同ip）
+
+设置完成后，就可以联网，并ping通192.168.x.y
