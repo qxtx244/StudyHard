@@ -1,6 +1,0 @@
-
-as4.0版本：
-    将.AndroidStudio4.0/config/plugins/availables.xm.etag后面的.etag去掉，得到availables.xml
-    重启as
-
-备注：不确定一定可行
