@@ -1,0 +1,5 @@
+属于字符编码问题，修改为使用跟AS环境使用的utf-8编码即可
+Help -> Edit Custom VM Options
+
+添加如下代码后重启
+-Dfile.encoding=UTF-8
