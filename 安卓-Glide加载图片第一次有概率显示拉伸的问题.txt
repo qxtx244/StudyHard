@@ -1,0 +1,3 @@
+
+可能是因为使用了.placeHolder()，使得.fitCenter()没效果
+》》解决办法：删掉或者加上.dontAnimate()即可
