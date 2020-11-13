@@ -1,0 +1,4 @@
+删除本地记录：git rm -r 文件或目录路径 --cached
+添加操作到暂存区： git add .
+提交修改：git commit -m "xxx"
+提交到远程仓库：git push xxx xxx
