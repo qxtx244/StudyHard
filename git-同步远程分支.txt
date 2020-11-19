@@ -1,0 +1,1 @@
+git remote prune origin即可同步远程仓库的分支信息
