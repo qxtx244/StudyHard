@@ -1,0 +1,3 @@
+
+ssh-agent bash
+ssh-add -k pemÎÄ¼şÂ·¾¶
