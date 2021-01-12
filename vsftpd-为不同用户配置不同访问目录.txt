@@ -1,0 +1,39 @@
+ftp示例：需要userA用户登录访问/home/userA目录，userB用户登录访问/home/userB目录
+
+步骤：
+
+1.切换到root用户操作
+    su
+
+2.创建用户userA和userB
+    userAdd userA
+    passwd userA 输入登录密码
+
+    userAdd userB
+    passwd userB 输入登录密码
+
+3.创建用户家目录
+    cd /home
+
+    mkdir userA
+    chown -R userA:userA
+    
+    mkdir userB
+    chown -R userB:userB
+
+4.编辑/etc/vsftpd.conf
+    vim /etc/vsftpd.conf
+
+5.将local_root=xxx注释掉（最前面添加#号）
+    #local_root=xxx
+
+6.添加一行user_dir_conf=你的配置目录路径（如/etc/vsftpd/user_dir_conf）
+    mkdir -p /etc/vsftpd/user_dir_conf
+
+7.在上一步的目录/etc/vsftpd/user_dir_conf中建立以登录用户名为名称的文件，添加一行：local_root=目标登录目录
+    cd /etc/vsftpd/user_dir_conf
+    touch userA
+    echo "local_root=/home/userA" >> userA
+
+    touch userB
+    echo "local_root=/home/userB" >> userB
