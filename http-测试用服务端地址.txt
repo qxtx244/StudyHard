@@ -1,0 +1,42 @@
+》》postman建立mockServer，进行自定义请求测试。这是外网服务器，并且好像有请求次数限制
+
+》》外网网站：http://httpbin.org/
+它回显您的请求中用于以下任何类型的数据：
+
+http://httpbin.org/ip返回原始IP。
+
+http://httpbin.org/user-agent返回用户代理。
+
+http://httpbin.org/headers返回标头字典。
+
+http://httpbin.org/get返回GET数据。
+
+http://httpbin.org/post返回POST数据。
+
+http://httpbin.org/put返回PUT数据。
+
+http://httpbin.org/delete返回DELETE数据
+
+http://httpbin.org/gzip返回gzip编码的数据。
+
+http://httpbin.org/status/:code返回给定的HTTP状态代码。
+
+http://httpbin.org/response-headers?key=val返回给定的响应头。
+
+http://httpbin.org/redirect/:n 302重定向n次。
+
+http://httpbin.org/relative-redirect/:n 302相对重定向n次。
+
+http://httpbin.org/cookies返回cookie数据。
+
+http://httpbin.org/cookies/set/:name/:value设置一个简单的cookie。
+
+http://httpbin.org/basic-auth/:user/:passwd挑战HTTP基本认证。
+
+http://httpbin.org/hidden-basic-auth/:user/:passwd 404的BasicAuth。
+
+http://httpbin.org/digest-auth/:qop/:user/:passwd挑战HTTP摘要验证。
+
+http://httpbin.org/stream/:n流n-100行。
+
+http://httpbin.org/delay/:n延迟响应n-10秒。
