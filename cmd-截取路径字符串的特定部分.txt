@@ -1,0 +1,10 @@
+
+使用类似于函数的形式传参，有特殊的写法获取特定内容？
+
+call :FUN %testPath%
+ 
+:FUN
+获取到文件路径：set file_path=%~dp1
+获取到文件名称：set file_name=%~n1
+获取到文件后缀：set suffix=%~x1
+截取倒数第四个开始 截取四个长度：%file_name:~-4,4%

@@ -1,0 +1,18 @@
+
+方法一：
+//在高版本gradle中可用
+libraryVariants.all { variant ->
+    variant.outputs.all { output ->
+        if (outputFileName.endsWith(".aar")) {
+             variant.getPackageLibrary().destinationDir = new File("目标输出绝对路径")
+             outputFileName = "目标aar文件名称"
+        }
+    }
+}
+
+方法二：
+在gradle编译完成后再拷贝/移动aar文件到指定目录
+gradle.buildFinished {
+    //拷贝
+}
+
