@@ -1,0 +1,5 @@
+在Android Studio中工具栏找到Help》Edit Custom VM Options...
+打开此文件，添加一行：-Dfile.encoding=UTF-8
+注意，行首不能有空格
+
+创建的文件位置：系统盘\Users\windows登录用户名\AppData\Roaming\Google\AndroidStudioXxxx\studio64.exe.vmoptions
