@@ -1,0 +1,5 @@
+git: pkg install git
+vim: pkg install vim
+ssh: pkg install openssh
+nmap pkg install nmap
+ffmpeg: pkg install ffmpeg

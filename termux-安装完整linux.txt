@@ -1,0 +1,24 @@
+官网wiki：https://wiki.termux.com/wiki/PRoot
+
+使用最新的原版termux，最好换源，不然慢。换成清华源即可
+
+1. 安装proot-distro：apt install proot-distro
+
+2. 使用proot-distro下载安装linux：proot-distro install <alias>
+    alias有以下：
+	Alpine Linux (alias: alpine) - the smallest of the available distributions.
+	Arch Linux (alias: archlinux)
+	Debian 10 Buster (alias: debian-buster)
+	Kali Nethunter (alias: nethunter) - only minimal build currently.
+	Ubuntu 18.04 / 20.04 (alias: ubuntu-18.04 / ubuntu-20.04)
+
+3. 等待完成后，登录linux：proot-distro login <alias>
+	proot-distro list - show the supported distributions and their status.
+	proot-distro install - install a distribution.
+	proot-distro login - start a root shell for the distribution.
+	proot-distro remove - uninstall the distribution.
+	proot-distro reset - reinstall the distribution.
+
+完成后，系统目录将位于/data/data/com.termux/files/usr/var/lib/proot-distro/<alias>目录下
+
+之后登录子系统：proot-distro login <alias>

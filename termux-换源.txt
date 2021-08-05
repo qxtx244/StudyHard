@@ -1,0 +1,2 @@
+在新版本termux上，使用termux-change-repo命令即可以可视化操作的方式换源；
+旧版本termux上，apt edit-sources即可编辑源，更改源地址后保存退出即可。（可先下载vim来编辑：pkg install vim，然后设置为默认编辑器：export EDITOR=vim）
