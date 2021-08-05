@@ -1,0 +1,14 @@
+首先安装wget（用来下载所需文件）：apt install wget
+
+方案一：
+    安装：
+	1. 下载别人放在码云上的脚本：wget -P 目标下载路径 https://gitee.com/yeshengdd/Termux-ADB/raw/master/InstallTools.sh -q
+	2. 执行成功下载到本地的脚本文件：bash InstallTools.sh
+    卸载：
+	1. 下载卸载脚本：wget -P 目标下载路径 https://gitee.com/yeshengdd/Termux-ADB/raw/master/RemoveTools.sh -q
+	2. 执行成功下载到本地的脚本文件：bash RemoveTools.sh
+
+方案二：（好像不可用）
+	1. 下载别人github上的资源：git clone https://github.com/rendiix/termux-adb-fastboot.git
+	2. 执行脚本：cd到下载的资源目录后，执行bash install.sh命令
+

@@ -3,3 +3,6 @@ vim: pkg install vim
 ssh: pkg install openssh
 nmap pkg install nmap
 ffmpeg: pkg install ffmpeg
+wget: pkg install wget
+proot: pkg install proot
+proot-distro: pkg install proot-distro
