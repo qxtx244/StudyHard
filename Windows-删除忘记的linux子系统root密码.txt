@@ -1,0 +1,2 @@
+在C盘的AppData中找到shadow文件，删掉里面的用户名行中$xxx$xxx部分，就可以清除root密码
+大致目录为：%USERPRIFILE%\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\etc

@@ -1,0 +1,2 @@
+在使用ufw disable后，使用ufw status查看结果时inactive的，但可以ping通，ssh却不通，提示connection refuse。
+执行iptables --flush命令后，ssh成功。
