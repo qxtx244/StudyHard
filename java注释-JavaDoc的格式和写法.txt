@@ -1,0 +1,19 @@
+（其实是html写法）
+
+javadoc中表格的形式：
+
+加粗<b></b>
+表示为代码（被注释代码引用？）<code>方法/变量名</code>
+
+//段落文本<p></p>
+<p>
+//声明为表格<table></table>
+<table BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+//表格行<tr></tr>
+//表格单元<td></td>
+<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor"></tr>
+	//表格列-头			//表格列-头
+<tr>	<td>单元内容</td>		<td>单元内容</td> 	</tr>
+<tr>	<td>单元内容</td>		<td>单元内容</td> 	</tr>
+
+</p>
