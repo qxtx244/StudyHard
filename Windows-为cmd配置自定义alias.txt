@@ -1,0 +1,14 @@
+
+1. 创建一个bat文件xxx.bat
+
+2. 让这个文件在启动cmd时自动执行：
+	修改注册表：找到HKEY_CURRENT_USER -> Software -> Microsoft -> Command Processor
+		如果没有AUTORUN，就添加一个AUTORUN字符串值，值为xxx.bat的绝对路径
+	
+3. 在bat里面使用 
+	doskey 别名=cmd命令
+    来定义各种执行命令的别名。建议每一条单独一行。如
+	将“clear”设置为命令“cls”的别名：doskey clear=cls
+	将“ls”设置为命令“dir”的别名：doskey ls=dir
+
+4. 保存，新开cmd窗口即生效
