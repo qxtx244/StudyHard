@@ -1,0 +1,6 @@
+
+在Other command line arguments中添加：
+使用：UTF-8字符集编码
+-encoding utf-8 -charset utf-8
+引入android.jar
+-bootclasspath /Users/用户名/sdk/platforms/android-14/android.jar
