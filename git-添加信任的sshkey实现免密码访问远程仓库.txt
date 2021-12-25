@@ -1,0 +1,28 @@
+假设在windows下，搭建git服务器的账户名为git，home目录为/home/git
+
+》在git账户home目录下添加.ssh文件夹
+
+》在.ssh文件夹中新建一个authorized_keys文件
+
+》将需要信任的ssh-key（即id_rsa.pub）公钥内容拷贝到这个文件中即可，
+每个ssh-key单独一行
+
+备注：
+
+如果windows下未配置ssh-keygen：
+1. 在git程序目录中/usr/bin这个目录下有一个ssh-keygen.exe
+或者 2. 在windows的linux子系统下生成，先配置ssh
+
+生成ssh-key：
+执行命令：ssh-keygen -C "你的备注"
+默认在用户目录下的.ssh目录生成一个id_rsa.pub，里面的全部内容。
+
+注意.ssh和authorized_keys的所有者应该是git账户，并且.ssh权限至少需要600，authorized_keys为755
+root下：
+chown -R git:git /home/git/.ssh
+chmod 600 /home/git/.ssh
+chown -R git:git /home/git/.ssh/authorized_keys
+chmod 755 /home/git/.ssh/authorized_keys
+
+将ssh-key拷贝到authorized_keys中：
+echo "你的ssh-key内容" >> authorized_keys
