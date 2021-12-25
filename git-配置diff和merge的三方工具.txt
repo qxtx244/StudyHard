@@ -1,0 +1,27 @@
+
+终端执行：
+difftool配置
+	git config --global diff.tool diffmerge
+	git config --global difftool.diffmerge.cmd "sgdm \"$LOCAL\" \"$REMOTE\""
+	//不允许git做备份
+	git config --global difftool.diffmerge.keepBackup false
+mergetool配置
+	git config --global merge.tool diffmerge
+	git config --global mergetool.diffmerge.cmd "sgdm --merge --result=\"MERGED\" \"$LOCAL\" \"$REMOTE\""
+	git config --global mergetool.diffmerge.trustExitCode true
+
+其实就是往%USERPROFILE%\.gitconfig中写配置：
+[difftool]
+	keepBackup = false
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = sgdm \"$LOCAL\" \"$REMOTE\"
+
+[mergetool]
+	keepBackup = false
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	cmd = sgdm --merge --result=\"$MERGED\" \"$LOCAL\" \"REMOTE\"
+	trustExitCode = true
