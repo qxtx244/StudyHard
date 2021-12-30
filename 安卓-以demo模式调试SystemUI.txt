@@ -1,2 +1,0 @@
-注意到在frameworks\base\packages\SystemUI中，有一个README.md说明，指出有一个Demo Mode，其说明文件位于/packages/SystemUI/docs/demo_mode.md中。
-按照里面的说明，可以在demo mode状态下调试SystemUI（如系统状态栏）

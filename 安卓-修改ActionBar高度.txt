@@ -1,0 +1,8 @@
+
+为目标AppCompatActivity的AppCompat Theme添加一个item。如更改为40dp：
+	<item name="actionBarSize">40dp</item>
+
+结果如下：
+<style name="XxxTheme" parent="Theme.AppCompat.DayNight.XxxxActionBar">
+        <item name="actionBarSize">40dp</item>
+</style>
