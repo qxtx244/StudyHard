@@ -1,0 +1,22 @@
+
+》》Logat：
+
+· 过滤不想看到的日志内容：选中想要过滤的日志内容关键字，右键>Fold lines like this
+
+
+》》断点调试：
+
+· 右键断点
+	“All”选项：停止应用整个线程。
+	“Thread”选项：停止断点所在线程（默认）
+	“Enabled”：Alt+单击 为启用/禁用断点
+	“Suspend”：当撞上断点时是否暂停
+	“Condition”：触发断点的条件，可使用java/kotlin的boolean表达式
+	“Log”：当撞上断点时，会在Console中打印出哪些日志，或者打印自己想要的日志
+	“Evaluate and log”：配合关闭Suspend，可实现通过断点，不暂停且能观察到想要的断点处信息的目的
+	“Disable until hitting the following breakpoint”：可实现一些断点的其它条件，比如，仅当触发另一个断点后，这个断点才会被激活和触发
+
+》》断点分组
+	可以把一些相关的断点放到一个组，统一打开/关闭，这样就可以只触发需要关注的断点
+	
+

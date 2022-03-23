@@ -1,5 +1,0 @@
-
-battery-historian使用：
-
-官网docker run -p port_number:9999 gcr.io/android-battery-historian/stable:3.0 --port 9999中的地址已经无效，
-替换为blystad/battery-historian即可

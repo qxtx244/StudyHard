@@ -8,7 +8,9 @@ battery-historian是一个官方推荐的电量分析工具。
 4. 设备连接电脑，执行adb bugreport。等完成后，将在用户目录下找到生成的zip文件；
 5. 页面加载这个zip文件或者里面的txt文件，然后点右侧的“submit”，很快就能开到展示的结果。
 
-1. 根据官方文档，可用docker来完成快速安装，但官方的仓库无法使用（Error response from daemon: Get https://gcr.io/v2/xxx/xxx/xxxx/xx: unknown: Unable to parse json key）
+1. 根据官方文档，可用docker来完成快速安装，但官方的仓库无法使用
+（Error response from daemon: Get https://gcr.io/v2/xxx/xxx/xxxx/xx: unknown: Unable to parse json key）
+（Error response from daemon: Get "https://asia.gcr.io/v2/": context deadline exceeded）
     附：google cloud地址：https://console.cloud.google.com/gcr/images/android-battery-historian/global/stable
 2. 在安卓P之后，bugreport文件好像会解析出错（battery-historian3.0），需要使用3.1版本。
 
