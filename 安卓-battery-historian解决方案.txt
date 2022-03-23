@@ -1,0 +1,18 @@
+
+battery-historian是一个官方推荐的电量分析工具。
+
+官方使用教程（Windows）：
+1. 下载安装docker（https://docs.docker.com/engine/install/）；
+2. cmd执行：docker -- run -p 你的端口:9999 gcr.io/android-battery-historian/stable:3.0 --port 9999；
+3. 执行完成后，最后会出现一行：Listening on port：你的端口，然后到浏览器中输入：http://localhost:<port>，即可看到页面；
+4. 设备连接电脑，执行adb bugreport。等完成后，将在用户目录下找到生成的zip文件；
+5. 页面加载这个zip文件或者里面的txt文件，然后点右侧的“submit”，很快就能开到展示的结果。
+
+1. 根据官方文档，可用docker来完成快速安装，但官方的仓库无法使用（Error response from daemon: Get https://gcr.io/v2/xxx/xxx/xxxx/xx: unknown: Unable to parse json key）
+    附：google cloud地址：https://console.cloud.google.com/gcr/images/android-battery-historian/global/stable
+2. 在安卓P之后，bugreport文件好像会解析出错（battery-historian3.0），需要使用3.1版本。
+
+解决方案1：使用docker run -d -p 9999:9999 bhaavan/battery-historian代替docker -- run -p <port>:9999 gcr.io/android-battery-historian/stable:3.0 --port 9999
+解决方案2：使用docker run -d -p 9999:9999 blystad/battery-historian代替docker -- run -p <port>:9999 gcr.io/android-battery-historian/stable:3.0 --port 9999
+解决方案3：使用在线网址：https://bathist.ef.lc
+解决方案4：在国外的云服务器（linux）上部署docker，然后将镜像pull下来，或者run然后使用docker save导出成tar，再传会本地，docker导入
