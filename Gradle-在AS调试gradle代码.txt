@@ -1,5 +1,5 @@
-
-
+﻿
+方案一（好像不好用）：
 1、启动监听线程：gradlew :<MODULE_NAME>:<TASK_NAME> -Dorg.gradle.debug=true
 
 2、添加一个配置：Run>Edit Configurations，左上角“+”添加一个“Gradle”配置，命名（如DebugGradle），[Debugger mode]选“Attach to remote JVM”，其它的默认即可。
@@ -9,4 +9,14 @@
 4、开始debug上一步的DebugGradle
 
 5、执行这个task
+
+方案二：
+1. cmd在工程根目录路径下执行（即AndroidStudio打开Terminal面板默认路径）：gradlew --no-daemon checkGradleDependencies  -Dorg.gradle.debug=true
+    可以看到 终端卡在> Starting Daemon上。
+
+2、添加一个配置：Run>Edit Configurations，左上角“+”添加一个“Gradle”配置，命名（如DebugGradle），默认设置不做修改
+
+3、给.gradle/.groovy代码下断点
+
+4、执行debug上一步创建的“DebugGradle”
 

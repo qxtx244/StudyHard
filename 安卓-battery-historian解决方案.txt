@@ -15,6 +15,7 @@ battery-historian是一个官方推荐的电量分析工具。
 2. 在安卓P之后，bugreport文件好像会解析出错（battery-historian3.0），需要使用3.1版本。
 
 解决方案1：使用docker run -d -p 9999:9999 bhaavan/battery-historian代替docker -- run -p <port>:9999 gcr.io/android-battery-historian/stable:3.0 --port 9999
+	（https://hub.docker.com/r/bhaavan/battery-historian/）
 解决方案2：使用docker run -d -p 9999:9999 blystad/battery-historian代替docker -- run -p <port>:9999 gcr.io/android-battery-historian/stable:3.0 --port 9999
 解决方案3：使用在线网址：https://bathist.ef.lc
 解决方案4：在国外的云服务器（linux）上部署docker，然后将镜像pull下来，或者run然后使用docker save导出成tar，再传会本地，docker导入
