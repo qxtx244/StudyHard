@@ -1,0 +1,12 @@
+
+》》往hosts中添加下面两行：
+131.253.33.219 edge.microsoft.com
+131.253.33.219 msedgeextensions.sf.tlu.dl.delivery.mp.microsoft.com
+
+hosts文件位置：
+C:\Windows\System32\drivers\etc\hosts
+
+或者以管理员权限打开cmd，执行以下代码：
+cd %WINDIR%\drivers\etc\
+echo 131.253.33.219 edge.microsoft.com >> hosts
+echo 131.253.33.219 msedgeextensions.sf.tlu.dl.delivery.mp.microsoft.com >> hosts
