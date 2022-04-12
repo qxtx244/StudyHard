@@ -1,0 +1,11 @@
+
+
+linux版本：
+有时候./nexus start启动失败，查看log，发现原因是未能提供足够的运行内存来运行jvm。
+在1G的运行内存下，可以启动nexus3.5.1，但无法启动nexus3.29.2或更高版本。
+
+
+》》vim nexus目录/bin/nexus.vmoptions
+
+》》将-Xms、-Xmx、-XX:MaxDirectMemorySize三项都改小，直到可以启动。
+修改为128m，128m，256m后，在1G运存下成功启动nexus3.38.1
