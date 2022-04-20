@@ -1,0 +1,13 @@
+
+在github的md文件中，可创建超链接，下载或跳转到库中的资源。
+
+假设用户USER的库A的MASTER分支中存在A/screenshot/1.png这么一张图片，那么：
+
+》在md中展示出来
+![链接名称](http://github.com/USER/A/blob/MASTER/screenshot/1.png?raw=true)
+
+》在md中创建下载链接
+![链接名称](http://github/com/USER/A/raw/MASTER/screenshot/1.png?raw=true)
+
+如果不知道怎么命名，则直接在github打开目标文件，然后右键“download”按钮》“复制链接地址”，即为该文件的超链接
+
