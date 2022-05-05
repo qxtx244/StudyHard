@@ -1,0 +1,6 @@
+
+从support包迁移到androidx，会导致RecyclerView的一些行为变化。
+在RecyclerView.OnItemTouchListener@onInterceptTouchEvent()事件中：
+
+· androidx：如果返回true，则之后的事件将会被onTouchEvent(RecyclerView, MotionEvent)方法拦截，而不是onInterceptTouchEvent()。
+· support：如果返回true，则之后的事件将会被onInterceptTouchEvent()方法全部拦截。
