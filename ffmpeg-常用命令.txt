@@ -1,2 +1,3 @@
 
-1. 将视频和字幕合并：ffmpeg -i 视频文件路径 -vf subtitles=字幕文件路径 输出路径
+1. 将视频和字幕合并：ffmpeg -i 视频文件路径 -vf subtitles=字幕文件路径 输出路径 
+2. 字幕文件延时处理：ffmpeg -itsoffset 秒数 -i 字幕文件路径 -c copy sub 输出路径
