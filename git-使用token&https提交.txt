@@ -1,0 +1,5 @@
+
+使用token来代替密码，通过https方式提交更新
+
+示例：github的token为abcdefg，设置远端仓库origin：
+git remote set-url origin https://账户名:abcdefg@github.com/账户名/仓库名
