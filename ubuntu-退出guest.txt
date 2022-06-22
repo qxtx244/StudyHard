@@ -1,0 +1,4 @@
+
+》重启，手动在右上角切换用户失败
+》ctrl+alt+F1进入命令行模式，然后切换root用户，编辑/usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf文件，添加一行：allow-guest=false，保存退出
+》重启：reboot
