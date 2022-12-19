@@ -1,0 +1,2 @@
+window.localStorage.removeItem(Object.keys(window.localStorage).find(i=>i.startsWith('@@auth0spajs')))
+输入javascript:和上面的代码，然后刷新页面即可解除chatgpt的限制
