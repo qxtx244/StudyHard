@@ -1,0 +1,10 @@
+
+》》安装好SourceInsight，打开后选择30天免费体验
+
+》》关闭，先拷贝一份SouceInsight4.exe到桌面（或其它合适的位置），原位置可能没有权限修改。用16进制编辑器（如UWP的Super Hex editor）打开这个exe文件
+
+》》查找 c8 00 00 00 74 2a 83 bc 24 08 这一段，将其中的 74 修改为 eb，保存。这一段有两处，修改第二处的
+
+》》打开%WINDOW_DIR%\ProgramData\Source Insight\4.0\si4.lic，将 Expiration="xxxx-xx-xx"改为你想要的时间（但发现无论改多少，最多只能得到90天试用期），保存
+
+》》使用Source Insight
