@@ -1,10 +1,13 @@
 
-》》安装好SourceInsight，打开后选择30天免费体验
+》》安装好 SourceInsight，打开后选择 30 天免费体验
 
-》》关闭，先拷贝一份SouceInsight4.exe到桌面（或其它合适的位置），原位置可能没有权限修改。用16进制编辑器（如UWP的Super Hex editor）打开这个exe文件
+》》修改 exe 程序：关闭 SourceInsight ，先拷贝一份 SouceInsight4.exe 到桌面（或其它合适的位置），原位置可能没有权限修改。用 16 进制编辑器（如 UWP 的 Super Hex editor）打开这个 exe 文件
 
 》》查找 c8 00 00 00 74 2a 83 bc 24 08 这一段，将其中的 74 修改为 eb，保存。这一段有两处，修改第二处的
 
-》》打开%WINDOW_DIR%\ProgramData\Source Insight\4.0\si4.lic，将 Expiration="xxxx-xx-xx"改为你想要的时间（但发现无论改多少，最多只能得到90天试用期），保存
+》》修改到期日期：打开 C:\ProgramData\Source Insight\4.0\si4.lic，将 Expiration="xxxx-xx-xx"改为你想要的时间（保持 90 天试用期），保存
+
+》》禁止 SourceInsight 联网：（win10）打开设置 -> 搜索 windows 防火墙 -> 防火墙和网络保护 -> 高级设置 -> 右键
+     "出站规则" -> 新建规则 -> 规则类型选“程序” -> 选择 SourceInsight4.exe 的路径 -> 操作为“阻止连接” -> 输入个方便标记的名称
 
 》》使用Source Insight
