@@ -1,0 +1,3 @@
+
+》希望将某次提交 ab1223c 的 1.txt 文件导出到 xxx/peek.txt
+git show ab1223c:1.txt > xxx/peek.txt
