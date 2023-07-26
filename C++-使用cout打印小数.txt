@@ -1,0 +1,3 @@
+
+使用 fixed + setprecision(x) 来实现小数的打印，x 表示小数的位数
+cout << fixed << setprecision(3) << f << endl;

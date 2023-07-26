@@ -1,0 +1,10 @@
+
+》》终端执行命令：g++ -dM -E -x c++ /dev/null | grep -F __cplusplus
+
+》》输出结果：
+如果是#define __STDC_VERSION__ 199901L，则默认支持的是c99标准；
+如果是#define __STDC_VERSION__ 201112L，则默认支持的c11标准；
+C++ 98：__cplusplus是199711L
+C++ 11：__cplusplus是201103L
+C++ 14：__cplusplus是201402L
+C++ 17：__cplusplus是201703L
