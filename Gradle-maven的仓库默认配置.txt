@@ -1,0 +1,1 @@
+gradle maven 的配置默认在 ~/.m2/settings.xml，仓库 ~/.m2/repository，可以修改 settings.xml 以变更默认的仓库路径
