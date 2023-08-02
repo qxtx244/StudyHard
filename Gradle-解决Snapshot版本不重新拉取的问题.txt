@@ -1,0 +1,10 @@
+
+在 Gradle 中的 buildscript 上，添加以下代码：
+configurations.all {
+        it.resolutionStrategy.cacheDynamicVersionsFor(5, 'minutes')
+        it.resolutionStrategy.cacheChangingModulesFor(0, 'seconds')
+}
+这个配置用于设置 Gradle 依赖项解析的策略。
+对于所有的配置（configurations.all），设置以下的解析策略（resolutionStrategy）：
+对于动态版本（dynamic versions），比如1.+或latest.release，缓存它们的结果5分钟（cacheDynamicVersionsFor(5, ‘minutes’)）。这样可以避免每次构建时都要重新查询最新的版本，提高构建效率。
+对于变化模块（changing modules），比如SNAPSHOT版本，不缓存它们的结果（cacheChangingModulesFor(0, ‘seconds’)）。这样可以保证每次构建时都能使用最新的模块，避免过期或不兼容的问题。
