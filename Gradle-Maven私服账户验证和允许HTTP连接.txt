@@ -1,0 +1,13 @@
+
+repositories {
+    maven {
+        url '仓库地址'
+        //账户认证
+        credentials {
+            username '账户名称'
+            password '账户密码'
+        }
+        //允许 http 连接
+        allowInsecureProtocol true
+    }
+}
